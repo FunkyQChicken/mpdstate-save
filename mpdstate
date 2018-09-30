@@ -76,6 +76,7 @@ fi
 if [ $1 = "de" ]; then 
     exists "$2" "which state to delete?"
     rm $STORAGE""$2
+    exit 0;
 fi
 
 # there were no argumets
