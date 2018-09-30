@@ -26,7 +26,7 @@ exists(){
 
 # the time it takes for mpd to start again
 pause(){
-    sleep 0.1
+    sleep 0.2
 }
 
 # make the storage if it doesn't exist
