@@ -25,7 +25,7 @@ use `mpdstate li` to list all saved mpdstates
 saved states are stored in .local/share/mpdstates    
 this is not very developed, submit a bug if you find one.  
 it has to stop mpd and then start it again to get and load mpdstates, so you will hear a little blip.  
-
+when you load an old playlist it automatically saves the current one as 'old'
 
 ## Install
 ```
