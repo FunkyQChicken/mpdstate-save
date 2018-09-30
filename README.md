@@ -30,7 +30,7 @@ to NAME2.
 saved states are stored in .local/share/mpdstates    
 this is not very developed, submit a bug if you find one.  
 it has to stop mpd and then start it again to get and load mpdstates, so you will hear a little blip.  
-when you load an old playlist it automatically saves the current one as 'old'
+when you load an old playlist it automatically saves the current one as 'old'  
 if you try to rename an mpdstate to a name that already exists it will tell you and exit without doing it.
 
 ## Install
