@@ -7,10 +7,11 @@ TMPFILE="/tmp/mpdstate.temp"
 
 HELPSTRING=$(
 cat << EOF
-\tld\tLoad (arg).\n
-\tsv\tSave current state as (arg).\n
+\tld\tLoad state (arg1).\n
+\tsv\tSave current state as (arg1).\n
 \tls\tList all saved states.\n
-\trm\tRemove (arg) saved state."\n
+\trm\tRemove (arg1) saved state."\n
+\tmv\tRename (arg1) saved state to (arg2)\n
 EOF
 )
 
@@ -76,6 +77,20 @@ fi
 if [ $1 = "rm" ]; then 
     exists "$2" "which state to delete?"
     rm $STORAGE""$2
+    exit 0;
+fi
+
+# RENAME state
+if [ $1 = "mv" ]; then 
+    exists "$2" "which state to rename?"
+    OLD=$STORAGE""$2
+    exists "$3" "what to rename it to?"
+    NEW=$STORAGE""$#
+    if [ -e $NEW  ]; then
+        echo "mpdstate $3 already exists, to overwrite it please delete it first.";
+        exit 1;
+    fi
+    mv "$OLD" "$NEW"
     exit 0;
 fi
 
