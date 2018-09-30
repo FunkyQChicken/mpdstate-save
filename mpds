@@ -7,10 +7,10 @@ TMPFILE="/tmp/mpdstate.temp"
 
 HELPSTRING=$(
 cat << EOF
-\tlo\tLoad (arg).\n
-\tsa\tSave current state as (arg).\n
-\tli\tList all saved states.\n
-\tde\tDelete (arg) saved state."\n
+\tld\tLoad (arg).\n
+\tsv\tSave current state as (arg).\n
+\tls\tList all saved states.\n
+\trm\tRemove (arg) saved state."\n
 EOF
 )
 
@@ -40,7 +40,7 @@ exists "$1" "\tNeeds arguments,\n""$HELPSTRING"
 
 
 # SAVE a playlist
-if [ $1 = "sa" ]; then
+if [ $1 = "sv" ]; then
     exists "$2" "needs name."    
     mpd --kill
     cp $MPDSTATE $STORAGE""$2
@@ -50,7 +50,7 @@ if [ $1 = "sa" ]; then
 fi
 
 # LOAD a playlist ()
-if [ $1 = "lo" ]; then
+if [ $1 = "ld" ]; then
     exists "$2" "which state to load?"    
     STATE=$STORAGE""$2
     if [ ! -e $STATE ]; then
@@ -67,13 +67,13 @@ if [ $1 = "lo" ]; then
 fi
 
 # LIST states
-if [ $1 = "li" ]; then
+if [ $1 = "ls" ]; then
     ls $STORAGE
     exit 0;
 fi
 
-# DELETE state
-if [ $1 = "de" ]; then 
+# REMOVE state
+if [ $1 = "rm" ]; then 
     exists "$2" "which state to delete?"
     rm $STORAGE""$2
     exit 0;

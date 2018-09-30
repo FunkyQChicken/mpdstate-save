@@ -6,19 +6,19 @@ to listening to podcasts. This tool allows me to save my places
 in multiple podcasts and resume them exactly where I stopped.  
 
 ## Save
-use `mpds sa NAME` to save the current mpdstate
+use `mpds sv NAME` to save the current mpdstate
   
   
 ## Load
-use `mpds lo NAME` to load the saved mpdstate 'NAME'  
+use `mpds ls NAME` to load the saved mpdstate 'NAME'  
   
   
-## Delete
-use `mpds de NAME` to delete the saved mpdstate 'NAME'
+## Remove
+use `mpds rm NAME` to delete the saved mpdstate 'NAME'
   
   
 ## List  
-use `mpds li` to list all saved mpdstates
+use `mpds ls` to list all saved mpdstates
   
   
 ### Notes  
