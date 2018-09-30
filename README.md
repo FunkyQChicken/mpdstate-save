@@ -1,16 +1,27 @@
-# mpdstate
-
-The mpdstate is the current playlist and the location in the song.  
+# mpds  
+  
+This is an mpdstate manipulator.   
+  
 I made this because it was hard switching from listening to songs  
-to listening to podcasts. This tool allows me to save my places 
-in multiple podcasts and resume them exactly where I stopped.  
+to listening to podcasts and back again. This tool allows me to   
+save my places in multiple podcasts and resume them exactly where  
+I stopped.  
+  
+  
+### Explanation of mpdstates  
+It is important to note that the mpdstate is more than just the current playlist,  
+The mpdstate is:  
+* the current playlist  
+* how far into the current song  
+* random/consume/crossfade/etc states  
+
 
 ## Save
 use `mpds sv NAME` to save the current mpdstate
   
   
 ## Load
-use `mpds ls NAME` to load the saved mpdstate 'NAME'  
+use `mpds ld NAME` to load the saved mpdstate 'NAME'  
   
   
 ## Remove
